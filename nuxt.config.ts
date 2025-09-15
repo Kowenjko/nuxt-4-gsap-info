@@ -1,6 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+import tailwindcss from '@tailwindcss/vite'
+
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
-  modules: ['v-gsap-nuxt']
+	compatibilityDate: '2025-07-15',
+	devtools: { enabled: true },
+	css: ['~/assets/css/main.css'],
+	modules: ['v-gsap-nuxt'],
+
+	vite: {
+		plugins: [tailwindcss()],
+	},
 })
