@@ -8,10 +8,20 @@ const route = useRoute()
 	<nav class="border-b container">
 		<ul class="flex gap-4 text-white">
 			<li>
-				<NuxtLink class="text-white" :class="{ 'text-blue-700!': '/' === route.path }" to="/"> Home </NuxtLink>
+				<NuxtLink
+					class="text-white text-xs font-bold"
+					:class="{ 'text-blue-400! underline': '/' === route.path }"
+					to="/"
+				>
+					Home
+				</NuxtLink>
 			</li>
 			<li v-for="(animate, index) in animations" :key="index">
-				<NuxtLink class="text-white" :class="{ 'text-blue-700!': animate.path === route.path }" :to="animate.path">
+				<NuxtLink
+					class="text-white text-xs font-bold"
+					:class="{ 'text-blue-400! underline': animate.path === route.path }"
+					:to="animate.path"
+				>
 					{{ animate.title }}
 				</NuxtLink>
 			</li>

@@ -1,3 +1,40 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+onMounted(() => {
+	gsapTo('#blue-box', {
+		y: 250,
+		rotation: 360,
+		borderRadius: '100%',
+		duration: 2,
+		ease: 'bounce',
+		repeat: -1,
+		yoyo: true, // will make the animation reverse on every other cycle
+	})
+})
+</script>
 
-<template>test</template>
+<template>
+	<main>
+		<h1>GsapTo</h1>
+
+		<p class="mt-5 text-gray-500">
+			The <code>gsap.to()</code> method is used to animate elements from their current state to a new state.
+		</p>
+		<p class="mt-5 text-gray-500">
+			The <code>gsap.to()</code> method is similar to the <code>gsap.from()</code> method, but the difference is that
+			the <code>gsap.to()</code> method animates elements from their current state to a new state, while the
+			<code>gsap.from()</code> method animates elements from a new state to their current state.
+		</p>
+
+		<p class="mt-5 text-gray-500">
+			Read more about the
+			<a href="https://greensock.com/docs/v3/GSAP/gsap.to()" target="_blank" rel="noreferrer noopener nofollow">
+				gsap.to()
+			</a>
+			method.
+		</p>
+
+		<div class="mt-20">
+			<div id="blue-box" class="w-20 h-20 bg-blue-500 rounded-lg" />
+		</div>
+	</main>
+</template>
